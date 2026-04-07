@@ -305,6 +305,7 @@ public class SpeedtestService(Config config, Func<SpeedTestResult, Task> updateF
     private async Task<int> DoRealPing(ServerTestItem it)
     {
         var webProxy = new WebProxy($"socks5://{Global.Loopback}:{it.Port}");
+        ApplyMixedPortAuth(webProxy);
         var responseTime = await ConnectionHandler.GetRealPingTime(_config.SpeedTestItem.SpeedPingTestUrl, webProxy, 10);
 
         ProfileExManager.Instance.SetTestDelay(it.IndexId, responseTime);
@@ -317,6 +318,7 @@ public class SpeedtestService(Config config, Func<SpeedTestResult, Task> updateF
         await UpdateFunc(it.IndexId, "", ResUI.Speedtesting);
 
         var webProxy = new WebProxy($"socks5://{Global.Loopback}:{it.Port}");
+        ApplyMixedPortAuth(webProxy);
         var url = _config.SpeedTestItem.SpeedTestUrl;
         var timeout = _config.SpeedTestItem.SpeedTestTimeout;
         await downloadHandle.DownloadDataAsync(url, webProxy, timeout, async (success, msg) =>
@@ -376,6 +378,22 @@ public class SpeedtestService(Config config, Func<SpeedTestResult, Task> updateF
         }
 
         return lstTest;
+    }
+
+    private void ApplyMixedPortAuth(WebProxy webProxy)
+    {
+        var inbound = _config?.Inbound?.FirstOrDefault();
+        if (inbound?.MixedPortAuthEnabled != true)
+        {
+            return;
+        }
+        if (inbound.MixedPortAuthUser.IsNullOrEmpty() || inbound.MixedPortAuthPass.IsNullOrEmpty())
+        {
+            return;
+        }
+
+        // Keep credentials out of URLs/logs and pass them via proxy credentials only.
+        webProxy.Credentials = new NetworkCredential(inbound.MixedPortAuthUser, inbound.MixedPortAuthPass);
     }
 
     private async Task UpdateFunc(string indexId, string delay, string speed = "")

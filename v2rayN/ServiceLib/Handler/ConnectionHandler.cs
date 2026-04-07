@@ -46,6 +46,7 @@ public static class ConnectionHandler
         {
             var port = AppManager.Instance.GetLocalPort(EInboundProtocol.socks);
             var webProxy = new WebProxy($"socks5://{Global.Loopback}:{port}");
+            ApplyMixedPortAuth(webProxy);
             var url = AppManager.Instance.Config.SpeedTestItem.SpeedPingTestUrl;
 
             for (var i = 0; i < 2; i++)
@@ -94,5 +95,21 @@ public static class ConnectionHandler
         {
         }
         return responseTime;
+    }
+
+    private static void ApplyMixedPortAuth(WebProxy webProxy)
+    {
+        var inbound = AppManager.Instance.Config?.Inbound?.FirstOrDefault();
+        if (inbound?.MixedPortAuthEnabled != true)
+        {
+            return;
+        }
+        if (inbound.MixedPortAuthUser.IsNullOrEmpty() || inbound.MixedPortAuthPass.IsNullOrEmpty())
+        {
+            return;
+        }
+
+        // Use credential object instead of URI userinfo to avoid leaking secrets.
+        webProxy.Credentials = new NetworkCredential(inbound.MixedPortAuthUser, inbound.MixedPortAuthPass);
     }
 }
