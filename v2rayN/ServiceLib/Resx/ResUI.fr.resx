@@ -1335,6 +1335,15 @@
   <data name="TbSettingsDestOverride" xml:space="preserve">
     <value>Type de détection de trafic</value>
   </data>
+  <data name="TbSettingsMixedPortAuthEnabled" xml:space="preserve">
+    <value>Activer l'authentification du port mixte</value>
+  </data>
+  <data name="TbSettingsMixedPortAuthPass" xml:space="preserve">
+    <value>Mot de passe d'authentification du port mixte</value>
+  </data>
+  <data name="TbSettingsMixedPortAuthUser" xml:space="preserve">
+    <value>Utilisateur d'authentification du port mixte</value>
+  </data>
   <data name="TbSettingsSecondLocalPortEnabled" xml:space="preserve">
     <value>Activer un second port d’écoute local</value>
   </data>

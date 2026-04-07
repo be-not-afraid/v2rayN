@@ -1338,6 +1338,15 @@
   <data name="TbSettingsDestOverride" xml:space="preserve">
     <value>نوع Sniffing</value>
   </data>
+  <data name="TbSettingsMixedPortAuthEnabled" xml:space="preserve">
+    <value>فعال‌سازی احراز هویت پورت ترکیبی</value>
+  </data>
+  <data name="TbSettingsMixedPortAuthPass" xml:space="preserve">
+    <value>رمز عبور احراز هویت پورت ترکیبی</value>
+  </data>
+  <data name="TbSettingsMixedPortAuthUser" xml:space="preserve">
+    <value>نام کاربری احراز هویت پورت ترکیبی</value>
+  </data>
   <data name="TbSettingsSecondLocalPortEnabled" xml:space="preserve">
     <value>فعال کردن دومین پورت ترکیبی</value>
   </data>

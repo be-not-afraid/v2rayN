@@ -22,6 +22,21 @@ public partial class CoreConfigSingboxService
                 _coreConfig.inbounds.Add(inbound);
 
                 inbound.listen_port = listenPort;
+                if (_config.Inbound.First().MixedPortAuthEnabled)
+                {
+                    inbound.users = new()
+                    {
+                        new()
+                        {
+                            username = _config.Inbound.First().MixedPortAuthUser,
+                            password = _config.Inbound.First().MixedPortAuthPass
+                        }
+                    };
+                }
+                else
+                {
+                    inbound.users = null;
+                }
 
                 if (_config.Inbound.First().SecondLocalPortEnabled)
                 {

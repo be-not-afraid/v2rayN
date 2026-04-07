@@ -1338,6 +1338,15 @@
   <data name="TbSettingsDestOverride" xml:space="preserve">
     <value>Sniffing type</value>
   </data>
+  <data name="TbSettingsMixedPortAuthEnabled" xml:space="preserve">
+    <value>Enable Mixed Port Auth</value>
+  </data>
+  <data name="TbSettingsMixedPortAuthPass" xml:space="preserve">
+    <value>Mixed Port Auth Pass</value>
+  </data>
+  <data name="TbSettingsMixedPortAuthUser" xml:space="preserve">
+    <value>Mixed Port Auth User</value>
+  </data>
   <data name="TbSettingsSecondLocalPortEnabled" xml:space="preserve">
     <value>Enable second mixed port</value>
   </data>

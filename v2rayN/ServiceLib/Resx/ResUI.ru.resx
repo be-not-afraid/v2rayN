@@ -1338,6 +1338,15 @@
   <data name="TbSettingsDestOverride" xml:space="preserve">
     <value>Тип сниффинга</value>
   </data>
+  <data name="TbSettingsMixedPortAuthEnabled" xml:space="preserve">
+    <value>Включить авторизацию смешанного порта</value>
+  </data>
+  <data name="TbSettingsMixedPortAuthPass" xml:space="preserve">
+    <value>Пароль авторизации смешанного порта</value>
+  </data>
+  <data name="TbSettingsMixedPortAuthUser" xml:space="preserve">
+    <value>Пользователь авторизации смешанного порта</value>
+  </data>
   <data name="TbSettingsSecondLocalPortEnabled" xml:space="preserve">
     <value>Включить второй смешанный порт</value>
   </data>

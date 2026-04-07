@@ -65,6 +65,23 @@ public partial class CoreConfigV2rayService
         inbound.sniffing.enabled = inItem.SniffingEnabled;
         inbound.sniffing.destOverride = inItem.DestOverride;
         inbound.sniffing.routeOnly = inItem.RouteOnly;
+        if (inItem.MixedPortAuthEnabled)
+        {
+            inbound.settings.auth = "password";
+            inbound.settings.accounts = new List<AccountsItem4Ray>
+            {
+                new()
+                {
+                    user = inItem.MixedPortAuthUser,
+                    pass = inItem.MixedPortAuthPass
+                }
+            };
+        }
+        else
+        {
+            inbound.settings.auth = "noauth";
+            inbound.settings.accounts = null;
+        }
 
         return inbound;
     }

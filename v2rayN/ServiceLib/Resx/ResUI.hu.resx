@@ -1338,6 +1338,15 @@
   <data name="TbSettingsDestOverride" xml:space="preserve">
     <value>Sniffing típus</value>
   </data>
+  <data name="TbSettingsMixedPortAuthEnabled" xml:space="preserve">
+    <value>Vegyes port hitelesítés engedélyezése</value>
+  </data>
+  <data name="TbSettingsMixedPortAuthPass" xml:space="preserve">
+    <value>Vegyes port hitelesítési jelszó</value>
+  </data>
+  <data name="TbSettingsMixedPortAuthUser" xml:space="preserve">
+    <value>Vegyes port hitelesítési felhasználó</value>
+  </data>
   <data name="TbSettingsSecondLocalPortEnabled" xml:space="preserve">
     <value>Második vegyes port engedélyezése</value>
   </data>

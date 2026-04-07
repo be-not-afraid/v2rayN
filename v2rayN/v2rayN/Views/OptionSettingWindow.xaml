@@ -94,6 +94,52 @@
                             Style="{StaticResource ToolbarTextBlock}"
                             Text="{x:Static resx:ResUI.TbSettingsSocksPortTip}"
                             TextWrapping="Wrap" />
+                        <TextBlock
+                            Grid.Row="1"
+                            Grid.Column="0"
+                            Margin="{StaticResource Margin8}"
+                            VerticalAlignment="Top"
+                            Style="{StaticResource ToolbarTextBlock}"
+                            Text="{x:Static resx:ResUI.TbSettingsMixedPortAuthEnabled}" />
+                        <StackPanel
+                            Grid.Row="1"
+                            Grid.Column="1"
+                            Orientation="Vertical">
+                            <ToggleButton
+                                x:Name="togMixedPortAuthEnabled"
+                                Margin="{StaticResource Margin8}"
+                                HorizontalAlignment="Left" />
+                        </StackPanel>
+                        <TextBlock
+                            Grid.Row="1"
+                            Grid.Column="0"
+                            Margin="{StaticResource Margin8}"
+                            VerticalAlignment="Center"
+                            Style="{StaticResource ToolbarTextBlock}"
+                            Text="{x:Static resx:ResUI.TbSettingsMixedPortAuthUser}" />
+                        <TextBox
+                            x:Name="txtMixedPortAuthUser"
+                            Grid.Row="1"
+                            Grid.Column="1"
+                            Width="200"
+                            Margin="{StaticResource Margin8}"
+                            VerticalAlignment="Center"
+                            Style="{StaticResource DefTextBox}" />
+                        <TextBlock
+                            Grid.Row="1"
+                            Grid.Column="0"
+                            Margin="8,96,8,8"
+                            VerticalAlignment="Center"
+                            Style="{StaticResource ToolbarTextBlock}"
+                            Text="{x:Static resx:ResUI.TbSettingsMixedPortAuthPass}" />
+                        <TextBox
+                            x:Name="txtMixedPortAuthPass"
+                            Grid.Row="1"
+                            Grid.Column="1"
+                            Width="200"
+                            Margin="8,96,8,8"
+                            VerticalAlignment="Center"
+                            Style="{StaticResource DefTextBox}" />
 
                         <TextBlock
                             Grid.Row="2"
