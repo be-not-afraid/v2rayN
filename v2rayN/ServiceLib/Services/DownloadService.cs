@@ -212,7 +212,24 @@ public class DownloadService
             return null;
         }
 
-        return new WebProxy($"socks5://{Global.Loopback}:{port}");
+        var webProxy = new WebProxy($"socks5://{Global.Loopback}:{port}");
+        ApplyMixedPortAuth(webProxy);
+        return webProxy;
+    }
+
+    private void ApplyMixedPortAuth(WebProxy webProxy)
+    {
+        var inbound = AppManager.Instance.Config?.Inbound?.FirstOrDefault();
+        if (inbound?.MixedPortAuthEnabled != true)
+        {
+            return;
+        }
+        if (inbound.MixedPortAuthUser.IsNullOrEmpty() || inbound.MixedPortAuthPass.IsNullOrEmpty())
+        {
+            return;
+        }
+
+        webProxy.Credentials = new NetworkCredential(inbound.MixedPortAuthUser, inbound.MixedPortAuthPass);
     }
 
     private async Task<bool> SocketCheck(string ip, int port)
