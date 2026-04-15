@@ -67,6 +67,11 @@ public partial class OptionSettingWindow
             this.Bind(ViewModel, vm => vm.newPort4LAN, v => v.txtpass.IsEnabled).DisposeWith(disposables);
             this.Bind(ViewModel, vm => vm.user, v => v.txtuser.Text).DisposeWith(disposables);
             this.Bind(ViewModel, vm => vm.pass, v => v.txtpass.Text).DisposeWith(disposables);
+            this.Bind(ViewModel, vm => vm.mixedPortAuthEnabled, v => v.togMixedPortAuthEnabled.IsChecked).DisposeWith(disposables);
+            this.Bind(ViewModel, vm => vm.mixedPortAuthEnabled, v => v.txtMixedPortAuthUser.IsEnabled).DisposeWith(disposables);
+            this.Bind(ViewModel, vm => vm.mixedPortAuthEnabled, v => v.txtMixedPortAuthPass.IsEnabled).DisposeWith(disposables);
+            this.Bind(ViewModel, vm => vm.mixedPortAuthUser, v => v.txtMixedPortAuthUser.Text).DisposeWith(disposables);
+            this.Bind(ViewModel, vm => vm.mixedPortAuthPass, v => v.txtMixedPortAuthPass.Text).DisposeWith(disposables);
             this.Bind(ViewModel, vm => vm.muxEnabled, v => v.togmuxEnabled.IsChecked).DisposeWith(disposables);
             this.Bind(ViewModel, vm => vm.logEnabled, v => v.toglogEnabled.IsChecked).DisposeWith(disposables);
             this.Bind(ViewModel, vm => vm.loglevel, v => v.cmbloglevel.Text).DisposeWith(disposables);

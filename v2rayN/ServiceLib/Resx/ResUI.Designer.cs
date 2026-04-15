@@ -4069,6 +4069,33 @@ namespace ServiceLib.Resx {
         }
         
         /// <summary>
+        ///   查找类似 Enable Mixed Port Auth 的本地化字符串。
+        /// </summary>
+        public static string TbSettingsMixedPortAuthEnabled {
+            get {
+                return ResourceManager.GetString("TbSettingsMixedPortAuthEnabled", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Mixed Port Auth Pass 的本地化字符串。
+        /// </summary>
+        public static string TbSettingsMixedPortAuthPass {
+            get {
+                return ResourceManager.GetString("TbSettingsMixedPortAuthPass", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Mixed Port Auth User 的本地化字符串。
+        /// </summary>
+        public static string TbSettingsMixedPortAuthUser {
+            get {
+                return ResourceManager.GetString("TbSettingsMixedPortAuthUser", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 sing-box Mux Protocol 的本地化字符串。
         /// </summary>
         public static string TbSettingsMux4SboxProtocol {

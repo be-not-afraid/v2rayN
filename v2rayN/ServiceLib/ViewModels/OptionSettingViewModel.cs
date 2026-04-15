@@ -14,6 +14,9 @@ public class OptionSettingViewModel : MyReactiveObject
     [Reactive] public bool newPort4LAN { get; set; }
     [Reactive] public string user { get; set; }
     [Reactive] public string pass { get; set; }
+    [Reactive] public bool mixedPortAuthEnabled { get; set; }
+    [Reactive] public string mixedPortAuthUser { get; set; }
+    [Reactive] public string mixedPortAuthPass { get; set; }
     [Reactive] public bool muxEnabled { get; set; }
     [Reactive] public bool logEnabled { get; set; }
     [Reactive] public string loglevel { get; set; }
@@ -149,6 +152,9 @@ public class OptionSettingViewModel : MyReactiveObject
         newPort4LAN = inbound.NewPort4LAN;
         user = inbound.User;
         pass = inbound.Pass;
+        mixedPortAuthEnabled = inbound.MixedPortAuthEnabled;
+        mixedPortAuthUser = inbound.MixedPortAuthUser;
+        mixedPortAuthPass = inbound.MixedPortAuthPass;
         muxEnabled = _config.CoreBasicItem.MuxEnabled;
         logEnabled = _config.CoreBasicItem.LogEnabled;
         loglevel = _config.CoreBasicItem.Loglevel;
@@ -334,6 +340,9 @@ public class OptionSettingViewModel : MyReactiveObject
         _config.Inbound.First().NewPort4LAN = newPort4LAN;
         _config.Inbound.First().User = user;
         _config.Inbound.First().Pass = pass;
+        _config.Inbound.First().MixedPortAuthEnabled = mixedPortAuthEnabled;
+        _config.Inbound.First().MixedPortAuthUser = mixedPortAuthUser;
+        _config.Inbound.First().MixedPortAuthPass = mixedPortAuthPass;
         if (_config.Inbound.Count > 1)
         {
             _config.Inbound.RemoveAt(1);

@@ -35,6 +35,9 @@ public class InItem
     public bool NewPort4LAN { get; set; }
     public string User { get; set; }
     public string Pass { get; set; }
+    public bool MixedPortAuthEnabled { get; set; }
+    public string MixedPortAuthUser { get; set; }
+    public string MixedPortAuthPass { get; set; }
     public bool SecondLocalPortEnabled { get; set; }
 }
 

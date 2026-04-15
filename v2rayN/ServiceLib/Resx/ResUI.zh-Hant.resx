@@ -1335,6 +1335,15 @@
   <data name="TbSettingsDestOverride" xml:space="preserve">
     <value>流量探測類型</value>
   </data>
+  <data name="TbSettingsMixedPortAuthEnabled" xml:space="preserve">
+    <value>啟用混合連接埠驗證</value>
+  </data>
+  <data name="TbSettingsMixedPortAuthPass" xml:space="preserve">
+    <value>混合連接埠驗證密碼</value>
+  </data>
+  <data name="TbSettingsMixedPortAuthUser" xml:space="preserve">
+    <value>混合連接埠驗證使用者</value>
+  </data>
   <data name="TbSettingsSecondLocalPortEnabled" xml:space="preserve">
     <value>開啟第二個本機監聽埠</value>
   </data>
